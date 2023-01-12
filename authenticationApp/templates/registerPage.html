@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Register Page</h1>
+        <hr>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="">firstname</label>
+            <input type="text" name="firstname" maxlength="150" autofocus="" required="" id="id_username">
+            <br>
+            <label for="">lastname</label>
+            <input type="text" name="lastname" maxlength="150" autofocus="" required="" id="id_username">
+            <br>
+            <label for="">Email</label>
+            <input type="email" name="email" maxlength="254" id="id_email" required="">
+            <br>
+            <label for="">Password</label>
+            <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+            <br>
+            <label for="">Password Confirmation</label>
+            <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+            <br>
+            <button>Send Request</button>
+        </form>
+
+
+    </body>
+</html>

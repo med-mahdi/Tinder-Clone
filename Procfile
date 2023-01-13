@@ -1,0 +1,1 @@
+web: gunicorn tinderClone.wsgi --log-file -

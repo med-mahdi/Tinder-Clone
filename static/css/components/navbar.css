@@ -189,7 +189,7 @@ span#openMenu{
     font-size: 35px;
     position: absolute;
     top: 12px;
-    left: 92%;
+    right: 3%;
     cursor:pointer;
     /* color: white; */
 }
@@ -199,7 +199,7 @@ span#closeMenu{
     display: none;
     font-size: 35px;
     position: absolute;
-    left: 92%;
+    right: 5%;
     top: 35px;
     cursor:pointer;
 }

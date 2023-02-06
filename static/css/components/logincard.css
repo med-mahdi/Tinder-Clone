@@ -209,7 +209,7 @@ p.registerNotify{
 
 
 
-@media (max-width:460px) {
+@media (max-width:380px) {
     .login-card form{
         width: 318px;
     }

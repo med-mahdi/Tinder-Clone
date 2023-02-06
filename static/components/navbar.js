@@ -75,20 +75,27 @@ app.component('navbar-sec',{
     mounted(){
         // Mounted Functions Goes Here
         var that = this;
+
+
+        // Case for responsive Mobile Devices
+        if (that.getWidth() <= 1100){
+            that.logourl = "/static/media/icons/tinder-black-logo.png";
+        }
         window.addEventListener("resize", function() {
+            var openMenu = document.querySelector("span#openMenu");
+            var closeMenu = document.querySelector("span#closeMenu");
+            console.log(openMenu);
+
             var screenWidth = that.getWidth();
             if (screenWidth <= 1100){
-                console.log("Apply Now");
                 that.logourl = "/static/media/icons/tinder-black-logo.png";
             }
             else{
                 that.logourl = "/static/media/icons/tinder-logo-white.png";
+                openMenu.style.display = "none";
+                closeMenu.style.display = "none";
             }
         });
-          
-        //> Add a function when resize the window to remove the icon
-
-
     }
 })
 

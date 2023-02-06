@@ -13,7 +13,7 @@ app.component('login-card',{
                             <p>Enter your username and password to login</p>
                         </div>
             
-                        <form action="" method="post">
+                        <form action="">
                             <label for="">User name
                                 <div class="input-box">
                                     <input type="text" v-model="username" required placeholder="Enter your username" maxlength="20">
@@ -35,7 +35,7 @@ app.component('login-card',{
                                 </div>
                             </label>
 
-                            <input type="submit" :disabled="btn_disabled" :value="btn_value" id="btn-submit" :class="{ btn_disabled: !btn_disabled }">
+                            <input type="submit" :disabled="btn_disabled" @click="submitForm" :value="btn_value" id="btn-submit" :class="{ btn_disabled: !btn_disabled }">
                             <p class="registerNotify">Don't have an account yet? <span id="register-link"><a href="/register">Register Now</a></span></p>
                         </form>
 
@@ -81,43 +81,36 @@ app.component('login-card',{
             var xhr = new XMLHttpRequest;
             var usernameInput = this.username
             var passwordInput= this.password
-            var csrfValue = this.csrfValue;
 
             // Disable The Button When Submitting
             this.btn_disabled = true
-            document.getElementById("btn-submit").style.backgroundColor = "#8079cf"
+            document.getElementById("btn-submit").style.backgroundColor = "#bb235d";
 
             xhr.onreadystatechange = function(){
                 var request_state = xhr.readyState;
+                if (request_state == 4){
+                    let request_response = xhr.response;
 
-                if (request_state === 4){
-                    var state = xhr.status
-                    if (state === 200){
-                        var response = xhr.response;
-                        console.log(response)
-
-                        if (response == "Authenticated Succefully"){
-                            // Drive The User To Home Page
-                            setTimeout(() => {
-                                that.redirectUser("home")
-                            }, 2000);
-                        }
-                        else{
-                            // Reload The Login Page For The User
-                            setTimeout(() => {
-                                window.location.reload()
-                            }, 2000);
-                        }
+                    if (request_response == "Authenticated Succefully"){
+                        // Drive The User To Home Page
+                        setTimeout(() => {
+                            that.redirectUser("home")
+                        }, 2000);
+                    }
+                    else{
+                        // Reload The Login Page For The User
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 2000);
                     }
                 }
             }
-
             xhr.open("POST","")
             xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${csrfValue}`)
+            xhr.send(`username=${usernameInput}&password=${passwordInput}&csrfmiddlewaretoken=${this.csrfval}`)
         }
     },
     mounted(){
-        console.log(this.csrfval);
+        // Methods Goes Here
     }
 })

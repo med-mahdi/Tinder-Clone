@@ -8,5 +8,8 @@ const app = Vue.createApp({
   },
   methods: {
       // Methods Here
+  },
+  mounted(){
+    // Methods Goes Here
   }
 })

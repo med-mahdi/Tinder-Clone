@@ -1,0 +1,53 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #F8F8F8;
+    background-image: url("https://tinder.com/static/build/07eef8b101ca939c978a599f508aa955.webp");
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* Size Of The Body */
+    overflow: hidden;
+    height: 100vh;
+
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+
+
+
+@media (max-width:460px) {
+    body:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.85;
+    }
+}   
+
+
+

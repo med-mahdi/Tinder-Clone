@@ -1,26 +1,35 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Tinder Joke</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'css/pages/loginpage.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/logincard.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+        <!-- Vue Js Link -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="https://kit.fontawesome.com/6fa4ec11e9.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <!--  -->
     </head>
-    <body>
-        <h1>Login Page</h1>
-        <hr>
+    <body id="app">
 
-        <form action="" method="post">
-            {% csrf_token %}
-            <label for="">username</label>
-            <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username">
-            <br>
-            <label for="">password</label>
-            <input type="password" name="password" autocomplete="new-password" required="" id="id_password2">
-            <br>
-            <button>Send Request</button>
-        </form>
+        {% csrf_token %}
+        <navbar-sec></navbar-sec>
+        <login-card :csrfval="csrfValue"></login-card>
 
-
+        <!-- Import Our App -->
+        <script src="{% static 'views/loginPage.js' %}"></script>
+        <!-- Import Our Navbar component -->
+        <script src="{% static 'components/navbar.js' %}"></script>
+        <script src="{% static 'components/logincard.js' %}"></script>
+        <script>app.mount("#app")</script>  
     </body>
 </html>

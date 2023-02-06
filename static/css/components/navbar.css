@@ -1,0 +1,240 @@
+
+
+
+
+
+header.nav-bar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3000;
+    background: linear-gradient(to bottom, rgb(24 24 24), rgb(58 58 58 / 0%));
+}
+
+
+header.nav-bar .container{
+    width: 95%;
+    height: 85px;
+    /* border: 1px solid green; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Left Side Navbar */
+
+header.nav-bar .container .left-side{
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+
+
+header.nav-bar .container .left-side #logo{
+    width: 135px;
+    cursor: pointer;
+}
+
+
+
+header.nav-bar .container .left-side .nav-links{
+    display: flex;
+    /* border: 1px solid red; */
+    list-style: none;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+
+header.nav-bar .container .left-side .nav-links li{
+    font-size: 19px;
+    font-family: sans-serif;
+    margin: 0 1em;
+    /* color: white; */
+    color: #e3e3e3;
+}
+
+
+
+/* Right Side Navbar */
+
+
+header.nav-bar .container .right-side button#connection-btn {
+    background-color: white;
+    width: 140px;
+    height: 50px;
+    border: none;
+    border-radius: 35px;
+    /* Font */
+    font-size: 19px;
+    font-family: sans-serif;
+    border: 2px solid #333333;
+    cursor: pointer;
+}
+
+
+header.nav-bar .container .right-side button#connection-btn:hover{
+    background-color: #fd2678;
+    color: white;
+    border: none;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+
+
+
+
+
+/*---------Navbar responsive ----------*/
+header.nav-bar-responsive{
+    position: absolute;
+    width: 100%;
+    z-index: 4000;
+}
+
+
+header.nav-bar-responsive .container{
+    width: 100%;
+    height: 100vh;
+    /* border: 1px solid green; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+
+header.nav-bar-responsive .container .left-side{
+    /* border: 1px solid red; */
+    width: 100%;
+    /* display */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+header.nav-bar-responsive .container .left-side #logo{
+    width: 115px;
+    margin-left: 15px;
+    margin-top: 19px;
+    cursor: pointer;
+}
+
+
+
+header.nav-bar-responsive .container .left-side .nav-links{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    /* margin-left: 25px; */
+    width: 100%;
+    align-items: center;
+    margin-top: 20px;
+}
+
+header.nav-bar-responsive .container .left-side .nav-links li{
+    font-size: 19px;
+    font-family: sans-serif;
+    margin: 1em 1em;
+    /* border: 1px solid #333333; */
+    border-radius: 5px;
+    width: 95%;
+    padding: 1em;
+    background-color: #f3f3f3;
+    cursor: pointer;
+}
+
+
+header.nav-bar-responsive .container .right-side{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header.nav-bar-responsive .container .right-side button#connection-btn {
+    background: linear-gradient(#fd2678,#ff6236e0);
+    width: 90%;
+    height: 59px;
+    border: none;
+    border-radius: 35px;
+    /* Font */
+    font-size: 19px;
+    color: white;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+
+
+
+span#openMenu{
+    display: none;
+    font-size: 35px;
+    position: absolute;
+    top: 12px;
+    left: 92%;
+    cursor:pointer;
+    /* color: white; */
+}
+
+
+span#closeMenu{
+    display: none;
+    font-size: 35px;
+    position: absolute;
+    left: 92%;
+    top: 35px;
+    cursor:pointer;
+}
+
+
+/*---------Navbar Media Query ----------*/
+
+
+
+
+
+
+@media (max-width: 1100px) {
+    header.nav-bar{
+        border-bottom: 1px solid #33333350;
+        background: white;
+    }
+
+    header.nav-bar .container .left-side .nav-links li{
+        color: var(--main-color);
+    }
+
+    header.nav-bar .container .left-side .nav-links , header.nav-bar .container .right-side{
+        display: none;
+    }
+
+    span#openMenu{
+        display: inline;
+    }
+
+    header.nav-bar .container{
+        height: 60px;
+    }
+
+    header.nav-bar .container .left-side #logo{
+        width: 95px;
+    }
+}

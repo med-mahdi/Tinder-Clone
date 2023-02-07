@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{% static 'css/pages/loginpage.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/logincard.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/tinderloader.css' %}">
         <!-- Vue Js Link -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://unpkg.com/vue@3"></script>
@@ -23,12 +24,14 @@
     <body id="app">
 
         {% csrf_token %}
+        <tinder-loader-animation v-if="showloader" @closeloader="closeLoaderAnimation"></tinder-loader-animation>
         <navbar-sec></navbar-sec>
         <login-card :csrfval="csrfValue"></login-card>
 
         <!-- Import Our App -->
         <script src="{% static 'pages/loginPage.js' %}"></script>
         <!-- Import Our Navbar component -->
+        <script src="{% static 'components/tinderloader.js' %}"></script>
         <script src="{% static 'components/navbar.js' %}"></script>
         <script src="{% static 'components/logincard.js' %}"></script>
         <script>app.mount("#app")</script>  

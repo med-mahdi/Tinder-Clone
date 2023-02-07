@@ -89,6 +89,7 @@ app.component('navbar-sec',{
             var screenWidth = that.getWidth();
             if (screenWidth <= 1100){
                 that.logourl = "/static/media/icons/tinder-black-logo.png";
+                openMenu.style.display = "inline";
             }
             else{
                 that.logourl = "/static/media/icons/tinder-logo-white.png";

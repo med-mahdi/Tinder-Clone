@@ -34,8 +34,9 @@ header.nav-bar .container .left-side{
 
 
 header.nav-bar .container .left-side #logo{
-    width: 135px;
+    width: 180px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 

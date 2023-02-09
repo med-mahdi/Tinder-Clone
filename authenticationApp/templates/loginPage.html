@@ -28,7 +28,7 @@
     <body>
         <div id="app">
             {% csrf_token %}
-            <!-- <tinder-loader-animation v-if="showloader" @closeloader="closeLoaderAnimation"></tinder-loader-animation> -->
+            <tinder-loader-animation v-if="showloader" @closeloader="closeLoaderAnimation"></tinder-loader-animation>
             <navbar-sec @open-login-card="openLoginModel"></navbar-sec>
             <background-hero></background-hero>
             <div class="main-home-section">

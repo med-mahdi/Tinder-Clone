@@ -15,20 +15,20 @@ app.component('login-card',{
             
                         <form action="">
                             <label for="">User name
-                                <div class="input-box">
+                                <div class="input-box" id="username_input">
                                     <input type="text" v-model="username" required placeholder="Enter your username" maxlength="20">
                                 </div>
                             </label>
             
                             <label for="">Password
-                                <div class="input-box" >
+                                <div class="input-box" id="password_input">
                                     <span v-if="!showPassword">
                                         <input type="password" @keyup="disableBtn" v-model="password" required placeholder="Enter your password">
                                         <i style="font-size:20px;color: #333333;" @click="showHiddePassword" class="fa-regular fa-eye"></i>
                                     </span>
             
                                     <span v-if="showPassword">
-                                        <input type="text"  @keyup="disableBtn" v-model="password" required placeholder="Enter your password">
+                                        <input type="text" @keyup="disableBtn" v-model="password" required placeholder="Enter your password">
                                         <i style="font-size:20px;color: #333333;" class="fa-regular fa-eye-slash" @click="showHiddePassword"></i>
                                     </span>
             
@@ -58,14 +58,17 @@ app.component('login-card',{
     },
     methods : {
         disableBtn(){
+            var buttonSubmit = document.getElementById("btn-submit");
             var password_length = this.password.length
             if (password_length >= 8){
                 this.btn_disabled = false
-                this.btn_value = "Start Swiping Right"
+                this.btn_value = "Start Swiping Right";
+                buttonSubmit.style.background = "linear-gradient(45deg,#ff287a,#ff6036)";
             }
             else{
                 this.btn_disabled = true
                 this.btn_value = "Connect Now"
+                buttonSubmit.style.background = "#909090";
             }
         }
         ,
@@ -75,33 +78,64 @@ app.component('login-card',{
         redirectUser(pageName){
             return window.location.href = `/${pageName}`;
         },
+        cleanForm(){
+            this.username = "";
+            this.password = "";
+            console.log("clean form applied!")
+        }
+        ,
+        errorFormShow(){
+            var usernameInput = document.getElementById("username_input");
+            var passwordInput = document.getElementById("password_input");
+            usernameInput.style.border = "2px solid #ff287a";
+            usernameInput.style.background = "#ff287a1c";
+            passwordInput.style.border = "2px solid #ff287a";
+            passwordInput.style.background = "#ff287a1c";
+            console.log("error form show applied!")
+        }
+        ,
+        errorFormRemove(){
+            var buttonSubmit = document.getElementById("btn-submit");
+            var usernameInput = document.getElementById("username_input");
+            var passwordInput = document.getElementById("password_input");
+            usernameInput.style.border = "2px solid #F2F2F2";
+            usernameInput.style.background = "#F2F2F2";
+            passwordInput.style.border = "2px solid #F2F2F2";
+            passwordInput.style.background = "#F2F2F2";
+            buttonSubmit.style.background = "#909090";
+            buttonSubmit.style.opacity = "1";
+            this.btn_value = "Connect Now";
+            console.log("error form remove applied!")
+        }
+        ,
         submitForm(e){
             e.preventDefault()
             var that = this
             var xhr = new XMLHttpRequest;
             var usernameInput = this.username
             var passwordInput= this.password
-
             // Disable The Button When Submitting
-            this.btn_disabled = true
-            document.getElementById("btn-submit").style.backgroundColor = "#bb235d";
+            document.getElementById("btn-submit").style.opacity = 0.7;
 
+            this.btn_disabled = true;
             xhr.onreadystatechange = function(){
                 var request_state = xhr.readyState;
                 if (request_state == 4){
                     let request_response = xhr.response;
-
-                    if (request_response == "Authenticated Succefully"){
+                    console.log(request_response)
+                    if (request_response == "Connect Successfully"){
                         // Drive The User To Home Page
                         setTimeout(() => {
                             that.redirectUser("home")
                         }, 2000);
                     }
-                    else{
+                    else {
                         // Reload The Login Page For The User
-                        setTimeout(() => {
-                            window.location.reload();
-                        }, 2000);
+                        that.errorFormShow()
+                        setTimeout(function(){
+                            that.cleanForm();
+                            that.errorFormRemove();
+                        },2000)
                     }
                 }
             }

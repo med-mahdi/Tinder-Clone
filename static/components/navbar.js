@@ -15,7 +15,7 @@ app.component('navbar-sec',{
                 </div>                
 
                 <div class="right-side">
-                    <button id="connection-btn">
+                    <button id="connection-btn" @click="openLogin">
                         Connect
                     </button>
                 </div>
@@ -65,6 +65,9 @@ app.component('navbar-sec',{
                 openMenuIcon.style.display = "none";
                 closeMenuIcon.style.display = "inline";
             }
+        },
+        openLogin(){
+            this.$emit("open-login-card")
         }
     }
     ,
@@ -96,6 +99,3 @@ app.component('navbar-sec',{
         });
     }
 })
-
-
-

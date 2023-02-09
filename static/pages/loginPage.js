@@ -5,12 +5,16 @@ const app = Vue.createApp({
     return {
       csrfValue : csrfVal,
       showloader : true,
+      modelLoginCard : false,
     }
   },
   methods: {
       // Methods Here
       closeLoaderAnimation(){
         this.showloader = false;
+      },
+      openLoginModel(){
+        this.modelLoginCard = !this.modelLoginCard;
       }
   },
   mounted(){

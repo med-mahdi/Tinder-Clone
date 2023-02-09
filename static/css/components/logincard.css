@@ -1,6 +1,12 @@
 
 
 
+@keyframes testanimation {
+    from {transform: scale(0);opacity: .8;}
+    to {transform: scale(1);opacity:1;}
+}
+
+
 
 .login-card{
     width: 450px;
@@ -14,6 +20,8 @@
     align-items: center;
     position: absolute;
     z-index: 100;
+    /* Animation */
+    animation: testanimation 1s;
 }
 
 
@@ -134,12 +142,9 @@ form label .input-box:hover{
 }
 
 
-
 input#btn-submit.btn_disabled{
     background: linear-gradient(45deg,#ff287a,#ff6036);
 }
-
-
 
 
 p.registerNotify{

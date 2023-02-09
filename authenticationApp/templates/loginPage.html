@@ -10,6 +10,10 @@
         <link rel="icon" href="/static/media/icons/tinder-icon.png">
         <!-- CSS -->
         <link rel="stylesheet" href="{% static 'css/pages/loginpage.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/home-background.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/home-hero.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/testemonial.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/landing-page-fotter.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/logincard.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/tinderloader.css' %}">
@@ -21,17 +25,29 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <!--  -->
     </head>
-    <body id="app">
-
-        {% csrf_token %}
-        <tinder-loader-animation v-if="showloader" @closeloader="closeLoaderAnimation"></tinder-loader-animation>
-        <navbar-sec></navbar-sec>
-        <login-card :csrfval="csrfValue"></login-card>
-
+    <body>
+        <div id="app">
+            {% csrf_token %}
+            <!-- <tinder-loader-animation v-if="showloader" @closeloader="closeLoaderAnimation"></tinder-loader-animation> -->
+            <navbar-sec @open-login-card="openLoginModel"></navbar-sec>
+            <background-hero></background-hero>
+            <div class="main-home-section">
+                <landing-page-hero-section @open-login-card="openLoginModel"></landing-page-hero-section>
+                <landing-page-testemonial></landing-page-testemonial>
+                <landing-page-fotter></landing-page-fotter> 
+            </div>
+            <div class="model-login" v-if="modelLoginCard" @click.self="openLoginModel">
+                <login-card :csrfval="csrfValue"></login-card>
+            </div>
+        </div>
         <!-- Import Our App -->
         <script src="{% static 'pages/loginPage.js' %}"></script>
         <!-- Import Our Navbar component -->
         <script src="{% static 'components/tinderloader.js' %}"></script>
+        <script src="{% static 'components/hero-background.js' %}"></script>
+        <script src="{% static 'components/hero-section.js' %}"></script>
+        <script src="{% static 'components/landing-page-testemonial.js' %}"></script>
+        <script src="{% static 'components/landing-page-fotter.js' %}"></script>
         <script src="{% static 'components/navbar.js' %}"></script>
         <script src="{% static 'components/logincard.js' %}"></script>
         <script>app.mount("#app")</script>  

@@ -12,12 +12,6 @@ from .decorators import *
 
 
 
-
-def testView(request):
-    return HttpResponse('<h1> Hey There</h1>')
-
-
-
 @userAuthenticated
 def registerPage(request):
     registerForm = CreateUserForm()

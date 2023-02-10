@@ -195,7 +195,7 @@ p.registerNotify{
         height: 470px;
         position: relative;
     }
-    .login-card .container .heading-card h1{
+    /* .login-card .container .heading-card h1{
         color: white;
     }
     .login-card .container .heading-card p{
@@ -203,10 +203,10 @@ p.registerNotify{
     }
     form label {
         color: white;
-    }
+    } */
     p.registerNotify{
         font-size: 13px;
-        color: white;
+        /* color: white; */
         text-align: center;
     }
 }   

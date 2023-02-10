@@ -53,7 +53,7 @@ app.component('navbar-sec',{
             var closeMenuIcon = document.querySelector("span#closeMenu.material-symbols-outlined");
             if (!closeMenu){
                 this.logourl = "/static/media/icons/tinder-black-logo.png";
-                body.style.overflow = "hidden";
+                body.style.overflowY = "scroll";
                 openMenuIcon.style.display = "inline";
                 closeMenuIcon.style.display = "none";
                 this.navbarClass = "nav-bar";
@@ -78,6 +78,7 @@ app.component('navbar-sec',{
     mounted(){
         // Mounted Functions Goes Here
         var that = this;
+        var bodyElement = document.body;
         // Case for responsive Mobile Devices
         if (that.getWidth() <= 1100){
             console.log("applying image for responsive mobile");

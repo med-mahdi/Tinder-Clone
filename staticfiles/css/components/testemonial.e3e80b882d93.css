@@ -1,0 +1,75 @@
+
+
+.testemonial-section {
+    /* border: 1px solid; */
+    max-width: 100%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.testemonial-section .container {
+    /* border: 1px solid; */
+    max-width: 1300px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+
+
+.testemonial-section .testemonial-card{
+    border: 1px solid lightgray;
+    max-width: 410px;
+    list-style: none;
+    padding: 20px;
+    border-radius: 5px;
+    padding-bottom: 50px;
+    margin-left: 20px;
+}
+
+.testemonial-section .testemonial-card:first-child {
+    margin-left: 0px;
+}
+
+
+.testemonial-section .testemonial-card h3{
+    font-size: 19px;
+    font-family: sans-serif;
+    color: #383838;
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 10px;
+}
+
+
+.testemonial-section .testemonial-card hr{
+    margin: .3em 0;
+}
+
+
+.testemonial-section .testemonial-card p{
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #252525;
+    margin-top: 10px;
+}
+
+
+
+/* Media Queries */
+
+
+@media (max-width:850px) {
+    .testemonial-section .container {
+        /* border: 1px solid; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testemonial-section .testemonial-card{
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+        margin-left: 0px;
+        padding-bottom: 50px;
+    }
+}

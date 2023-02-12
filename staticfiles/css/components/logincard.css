@@ -1,0 +1,236 @@
+
+
+
+@keyframes testanimation {
+    from {transform: scale(0);opacity: .8;}
+    to {transform: scale(1);opacity:1;}
+}
+
+
+
+.login-card{
+    width: 450px;
+    height: 520px;
+    border: 1px solid #C0C0C0;
+    border-radius: 10px;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    /* Animation */
+    animation: testanimation 1s;
+}
+
+
+.login-card .container{
+    /* border: 1px solid red; */
+    width: 350px;
+    height: 85%;
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* Position */
+    position: relative;
+    /* top: 5px; */
+}
+
+/*---*/
+
+.login-card .container .heading-card{
+    text-align: center;
+}
+
+
+.login-card .container img#logo-tinder{
+    width: 30px;
+}
+
+
+
+.login-card .container .heading-card h1{
+    font-family: sans-serif;
+    font-style: bold;
+    font-weight: 500; 
+    font-size: 28px;
+    line-height: 38px;
+    color: var(--main-color);
+    margin-top: 13px;
+}
+
+
+
+.login-card .container .heading-card p{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 140%;
+    /* or 18px */
+    text-align: center;
+    color: var(--pri-text-color);
+}
+
+/*---*/
+
+
+form{
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* Position */
+    margin-top: 1em;
+    position: relative;
+    top: 10px;
+}
+
+form label{
+    margin-bottom: 1em;
+    margin-bottom: 1.3em;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333333;
+}
+
+form label .input-box{
+    border-radius: var(--btn-brd-rd);
+    background-color: #F2F2F2;
+    padding: 1em;
+    margin-top: .4em;
+    border: 2px solid #F2F2F2;
+    border-radius: 2.5px;
+    display: flex;
+}
+
+form label .input-box>span{
+    display: flex;
+    width: 100%;
+}
+
+
+
+
+form label .input-box input{
+    background-color: transparent;
+    width: 95%;
+    outline: none;
+    border: none;
+}
+
+form label .input-box:hover{
+    transition: .2s;
+    border: 2px solid #F2F2F2;
+}
+
+
+#btn-submit{
+    padding: 1.3em 1em;
+    font-size: 17px;
+    border: none;
+    color: white;
+    background: #909090;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+
+input#btn-submit.btn_disabled{
+    background: linear-gradient(45deg,#ff287a,#ff6036);
+}
+
+
+p.registerNotify{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(53, 54, 56, 0.8);
+    margin-top: 1.3em;
+    text-align: center;
+}
+
+#register-link{
+    color: #fd2678;
+}
+
+#register-link a{
+    text-decoration: none;
+    color: #fd2678;
+}
+
+
+@media (max-width:510px) {
+    .login-card{
+        border: none;
+        width: 90%;
+        height: 520px;
+        position: relative;
+        background-color: transparent;
+        background-color: white;
+    }
+    p.registerNotify{
+        text-align: left;
+    }
+    .heading-card{
+        margin-left: 18px;
+    }
+
+} 
+
+
+
+@media (max-width:460px) {
+    .login-card{
+        position: relative;
+        width: 98%;
+        background-color: transparent;
+        height: 470px;
+        position: relative;
+    }
+    /* .login-card .container .heading-card h1{
+        color: white;
+    }
+    .login-card .container .heading-card p{
+        color: rgba(255, 255, 255, 0.777);
+    }
+    form label {
+        color: white;
+    } */
+    p.registerNotify{
+        font-size: 13px;
+        /* color: white; */
+        text-align: center;
+    }
+}   
+
+
+
+
+@media (max-width:380px) {
+    .login-card form{
+        width: 318px;
+    }
+}  
+
+
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.fa-eye{
+    cursor: pointer;
+}

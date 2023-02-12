@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.main-home-section {
+    width: 100%;
+    position: absolute;
+}
+
+
+.model-login {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 12, 12, 0.441);
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    /* Display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width:460px) {
+    .model-login {
+        background:rgb(255 255 255 / 98%);
+    }
+}

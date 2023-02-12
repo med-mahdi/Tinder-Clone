@@ -1,0 +1,46 @@
+
+
+
+.tinder-joke-loader{
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(45deg,#ff287a,#ff6036);
+    /* Display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Position */
+    position: absolute;
+    z-index: 10000;
+}
+
+
+@keyframes logoScale {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.7);}
+    100% {transform: scale(1);}
+}
+
+
+.tinder-joke-loader #logo-image{
+    width: 200px;
+    animation-name: logoScale;
+    animation-duration: 2s;
+}
+
+
+
+@media (max-width:510px) {
+    @keyframes logoScale {
+        0% {transform: scale(1);}
+        50% {transform: scale(1.2);}
+        100% {transform: scale(1);}
+    }
+    .tinder-joke-loader #logo-image{
+        width: 200px;
+        animation-name: logoScale;
+        animation-duration: 2s;
+    } 
+} 

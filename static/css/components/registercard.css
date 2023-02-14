@@ -291,3 +291,11 @@ p.registerNotify{
 .fa-eye{
     cursor: pointer;
 }
+
+
+
+@media (max-width: 380px){
+    .register-card form {
+        width: 318px;
+    }
+}

@@ -6,7 +6,7 @@ app.component('landing-page-hero-section',{
         <div class="container">
             <h1 id="hero-header">Swipe Left</h1>
             <div class="buttons">
-                <button id="hero-btn">Create Account</button>
+                <button id="hero-btn" @click="openRegister">Create Account</button>
                 <button id="hero-btn-sec" @click="openLogin">Log in</button>
             </div>
         </div>
@@ -22,6 +22,10 @@ app.component('landing-page-hero-section',{
         openLogin(){
             console.log('apply here')
             this.$emit("open-login-card")
+        },
+        openRegister(){
+            console.log('apply here')
+            this.$emit("open-register-card")
         }
     },
     mounted() {

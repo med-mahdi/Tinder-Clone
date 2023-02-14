@@ -52,7 +52,8 @@ app.component('navbar-sec',{
             var openMenuIcon = document.querySelector("span#openMenu.material-symbols-outlined");
             var closeMenuIcon = document.querySelector("span#closeMenu.material-symbols-outlined");
             if (!closeMenu){
-                this.logourl = "/static/media/icons/tinder-black-logo.png";
+                // this.logourl = "/static/media/icons/tinder-black-logo.png";
+                this.logourl = "/static/media/icons/tinder-logo-white.png";
                 body.style.overflowY = "scroll";
                 openMenuIcon.style.display = "inline";
                 closeMenuIcon.style.display = "none";
@@ -82,14 +83,15 @@ app.component('navbar-sec',{
         // Case for responsive Mobile Devices
         if (that.getWidth() <= 1100){
             console.log("applying image for responsive mobile");
-            that.logourl = "/static/media/icons/tinder-black-logo.png";
+            that.logourl = "/static/media/icons/tinder-logo-white.png";
         }
         window.addEventListener("resize", function() {
             var openMenu = document.querySelector("span#openMenu");
             var closeMenu = document.querySelector("span#closeMenu");
             var screenWidth = that.getWidth();
             if (screenWidth <= 1100){
-                that.logourl = "/static/media/icons/tinder-black-logo.png";
+                // that.logourl = "/static/media/icons/tinder-black-logo.png";
+                that.logourl = "/static/media/icons/tinder-logo-white.png";
                 openMenu.style.display = "inline";
             }
             else{

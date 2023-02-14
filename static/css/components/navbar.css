@@ -215,8 +215,9 @@ span#closeMenu{
 
 @media (max-width: 1100px) {
     header.nav-bar{
-        border-bottom: 1px solid #33333350;
-        background: white;
+        /* border-bottom: 1px solid #33333350; */
+        /* background: white; */
+        background: linear-gradient(to bottom, rgb(24 24 24), rgb(58 58 58 / 0%));
     }
 
     header.nav-bar .container .left-side .nav-links li{
@@ -229,6 +230,7 @@ span#closeMenu{
 
     span#openMenu{
         display: inline;
+        color: white;
     }
 
     header.nav-bar .container{

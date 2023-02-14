@@ -16,17 +16,18 @@ from .decorators import *
 def registerPage(request):
     registerForm = CreateUserForm()
     if request.method == 'POST':
-        firstname = request.POST.get('firstname')
-        lastname = request.POST.get('lastname')
-        userEmail = request.POST.get('email')
-        password = request.POST.get('password1')
-        password_confirmation = request.POST.get('password2')
-        processRight = userCreationChecker(firstname , lastname , userEmail ,password, password_confirmation)
-        if (processRight):
+        username = request.POST.get('username')
+        userEmail = request.POST.get('useremail')
+        password = request.POST.get('password')
+        input_processRight = userCreationChecker(username , userEmail ,password)
+        username_list = username.split(" ")
+        if (input_processRight):
             try:
-                username = firstname + lastname
                 new_user = User.objects.create_user(username=username, email = userEmail , password=password)
-                user_profile = UserProfile.objects.create(user=new_user,fname=firstname,lname=lastname, emailAddress= userEmail)
+                if (len(username_list) > 1):
+                    user_profile = UserProfile.objects.create(user=new_user,fname=username_list[0],lname=username_list[1], emailAddress= userEmail)
+                else:
+                    user_profile = UserProfile.objects.create(user=new_user,fname=username_list[0],lname="", emailAddress= userEmail)
                 clientGroup = Group.objects.get(name='clients')
                 clientGroup.user_set.add(new_user)
                 user_profile.save()
@@ -51,7 +52,7 @@ def loginPage(request):
             return HttpResponse("Connect Successfully")
         else:
             return HttpResponse("Authenticated unSuccefully")
-    return render(request,'loginPage.html')
+    return render(request,'homePage.html')
 
 
 

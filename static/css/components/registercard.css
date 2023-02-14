@@ -1,4 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+body{
+    background-color: #F8F8F8;
+}
+
+
+
+
+/*------------*/
 
 
 @keyframes cardanimation {
@@ -7,37 +20,20 @@
 }
 
 
-
-.login-card{
+.register-card{
     width: 450px;
-    height: 520px;
+    height: max-content;
     /* border: 1px solid #C0C0C0; */
     border-radius: 10px;
     background-color: white;
     margin: 0 auto;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    z-index: 100;
+    padding: 35px;
     /* Animation */
     animation: cardanimation 1s;
-}
-
-
-.login-card .container{
-    /* border: 1px solid red; */
-    width: 350px;
-    height: 85%;
-    max-height: 450px;
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    /* Position */
-    position: relative;
-    /* top: 5px; */
 }
 
 
@@ -63,23 +59,41 @@ svg#cancelIcon:hover {
 }
 
 
+
+.register-card .container{
+    /* border: 1px solid red; */
+    width: 350px;
+    height: 85%;
+    max-height: 500px;
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* Position */
+    position: relative;
+    /* top: 5px; */
+}
+
 /*---*/
 
-.login-card .container .heading-card{
+.register-card .container .heading-card{
     text-align: center;
+    position: relative;
+    top: 5px;
 }
 
 
-.login-card .container img#logo-tinder{
+.register-card .container img#logo-tinder{
     width: 30px;
 }
 
 
 
-.login-card .container .heading-card h1{
+.register-card .container .heading-card h1{
     font-family: sans-serif;
-    font-style: italic;
     font-weight: bold;
+    font-style: italic; 
     font-size: 28px;
     line-height: 38px;
     color: var(--main-color);
@@ -88,7 +102,7 @@ svg#cancelIcon:hover {
 
 
 
-.login-card .container .heading-card p{
+.register-card .container .heading-card p{
     font-family: sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -124,6 +138,7 @@ form label{
     color: #333333;
 }
 
+
 form label .input-box{
     border-radius: var(--btn-brd-rd);
     background-color: #F2F2F2;
@@ -146,7 +161,7 @@ form label .input-box input{
     background-color: transparent;
     width: 95%;
     outline: none;
-    border: none;
+    border: none    ;
 }
 
 form label .input-box:hover{
@@ -156,8 +171,9 @@ form label .input-box:hover{
 
 
 #btn-submit{
-    padding: 1.3em 1em;
+    padding: 1.2em;
     font-size: 17px;
+    border-radius: var(--btn-brd-rd);
     border: none;
     color: white;
     background: #909090;
@@ -166,9 +182,12 @@ form label .input-box:hover{
 }
 
 
+
 input#btn-submit.btn_disabled{
-    background: linear-gradient(45deg,#ff287a,#ff6036);
+    background: #fd2678;
 }
+
+
 
 
 p.registerNotify{
@@ -190,28 +209,53 @@ p.registerNotify{
     color: #fd2678;
 }
 
+/*--- Media Queries For Login Card*/
 @media (max-width:1100px) {
-    .login-card{
-        /* border: none; */
+    .register-card{
+        /* border: 1px solid red; */
         width: 100%;
         height: 100%;
-    }
-} 
-
-@media (max-width:1100px) {
-    .login-card{
-        /* border: none; */
         animation: none;
     }
 } 
 
+@media (max-width:1000px) {
+    .register-card{
+        position: relative;
+    }
+}
+
+
+
+
+@media (max-width:950px) {
+    .register-card{
+        position: relative;
+    }
+}
+
+
+@media (max-width:850px) {
+    .register-card{
+        position: relative;
+    }
+}
 
 
 @media (max-width:510px) {
-    .login-card{
-        /* border: none; */
-        width: 100%;
-        height: 100%;
+    .register-card .container .heading-card{
+        text-align: left;
+        align-self: flex-start;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .register-card{
+        border: none;
+        width: 90%;
         position: relative;
         background-color: transparent;
         background-color: white;
@@ -219,48 +263,19 @@ p.registerNotify{
     p.registerNotify{
         text-align: left;
     }
-    .heading-card{
-        margin-left: 18px;
-    }
-
 } 
 
 
 
-@media (max-width:460px) {
-    .login-card{
-        position: relative;
-        width: 100%;
-        background-color: transparent;
-        height: 100%;
+@media (max-width:430px) {
+    .register-card{
+        width: 98%;
         position: relative;
     }
-    /* .login-card .container .heading-card h1{
-        color: white;
-    }
-    .login-card .container .heading-card p{
-        color: rgba(255, 255, 255, 0.777);
-    }
-    form label {
-        color: white;
-    } */
     p.registerNotify{
         font-size: 13px;
-        /* color: white; */
-        text-align: center;
     }
 }   
-
-
-
-
-@media (max-width:380px) {
-    .login-card form{
-        width: 318px;
-    }
-}  
-
-
 
 
 .material-symbols-outlined {
@@ -270,6 +285,8 @@ p.registerNotify{
     'GRAD' 0,
     'opsz' 48
 }
+
+
 
 .fa-eye{
     cursor: pointer;

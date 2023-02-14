@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{% static 'css/components/testemonial.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/landing-page-fotter.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/logincard.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components/registercard.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/navbar.css' %}">
         <link rel="stylesheet" href="{% static 'css/components/tinderloader.css' %}">
         <!-- Vue Js Link -->
@@ -29,15 +30,20 @@
         <div id="app">
             {% csrf_token %}
             <tinder-loader-animation v-if="showloader" @closeloader="closeLoaderAnimation"></tinder-loader-animation>
-            <navbar-sec @open-login-card="openLoginModel"></navbar-sec>
+            <navbar-sec @open-login-card="closeLoginModel"></navbar-sec>
             <background-hero></background-hero>
             <div class="main-home-section">
-                <landing-page-hero-section @open-login-card="openLoginModel"></landing-page-hero-section>
+                <landing-page-hero-section @open-login-card="closeLoginModel" @open-register-card="closeRegisterModel"></landing-page-hero-section>
                 <landing-page-testemonial></landing-page-testemonial>
                 <landing-page-fotter></landing-page-fotter> 
             </div>
-            <div class="model-login" v-if="modelLoginCard" @click.self="openLoginModel">
-                <login-card :csrfval="csrfValue"></login-card>
+            <!-- Login Card Component Model -->
+            <div class="model-login" v-if="modelLoginCard" @click.self="closeLoginModel">
+                <login-card :csrfval="csrfValue" @open-login-card="closeLoginModel"></login-card>
+            </div>
+            <!-- Register Card Component Model -->
+            <div class="model-register" v-if="modelregisterCard" @click.self="closeRegisterModel">
+                <register-card :csrfval="csrfValue" @close-register-card="closeRegisterModel"></register-card>
             </div>
         </div>
         <!-- Import Our App -->
@@ -50,6 +56,7 @@
         <script src="{% static 'components/landing-page-fotter.js' %}"></script>
         <script src="{% static 'components/navbar.js' %}"></script>
         <script src="{% static 'components/logincard.js' %}"></script>
+        <script src="{% static 'components/registerCard.js' %}"></script>
         <script>app.mount("#app")</script>  
     </body>
 </html>

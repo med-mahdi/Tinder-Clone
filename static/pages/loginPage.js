@@ -6,6 +6,7 @@ const app = Vue.createApp({
       csrfValue : csrfVal,
       showloader : true,
       modelLoginCard : false,
+      modelregisterCard : false,
     }
   },
   methods: {
@@ -13,8 +14,23 @@ const app = Vue.createApp({
       closeLoaderAnimation(){
         this.showloader = false;
       },
-      openLoginModel(){
+      closeLoginModel(){
         this.modelLoginCard = !this.modelLoginCard;
+        if (this.modelLoginCard == true){
+          document.body.style.overflowY = "hidden";
+        }
+        else {
+          document.body.style.overflowY = "auto";
+        }
+      },
+      closeRegisterModel(){
+        this.modelregisterCard = !this.modelregisterCard;
+        if (this.modelregisterCard == true){
+          document.body.style.overflowY = "hidden";
+        }
+        else {
+          document.body.style.overflowY = "auto";
+        }
       }
   },
   mounted(){

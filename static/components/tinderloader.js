@@ -23,8 +23,11 @@ app.component('tinder-loader-animation',{
     mounted(){
         // Mounted methods Goes Here
         var that = this;
+        var body = document.body;
+        body.style.overflow = 'hidden';
         setTimeout(function(){
             that.closeLoader();
+            body.style.overflow = 'auto';
         },2200)
     }
 })

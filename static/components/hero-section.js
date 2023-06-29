@@ -4,7 +4,7 @@ app.component('landing-page-hero-section',{
     `
     <div class="hero-sec">
         <div class="container">
-            <h1 id="hero-header">Swipe Left</h1>
+            <h1 id="hero-header">Swipe Right</h1>
             <div class="buttons">
                 <button id="hero-btn" @click="openRegister">Create Account</button>
                 <button id="hero-btn-sec" @click="openLogin">Log in</button>

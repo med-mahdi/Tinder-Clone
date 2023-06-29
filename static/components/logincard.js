@@ -129,7 +129,7 @@ app.component('login-card',{
                     if (request_response == "Connect Successfully"){
                         // Drive The User To Home Page
                         setTimeout(() => {
-                            that.redirectUser("home")
+                            that.redirectUser("app/recs")
                         }, 2000);
                     }
                     else {

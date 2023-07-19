@@ -28,7 +28,7 @@ DEBUG = True
 # APPEND_SLASH = False
 
 ALLOWED_HOSTS = ["*"]
-# CSRF_TRUSTED_ORIGINS = ['https://web-production-3d51.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['https://6386-160-179-7-110.ngrok-free.app']
 
 
 # Application definition

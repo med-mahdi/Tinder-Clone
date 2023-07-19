@@ -28,10 +28,12 @@ DEBUG = True
 # APPEND_SLASH = False
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://web-production-3d51.up.railway.app']
+# CSRF_TRUSTED_ORIGINS = ['https://web-production-3d51.up.railway.app']
 
 
 # Application definition
+
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,9 +42,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'authenticationApp'
+    'authenticationApp',
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
 ]
+
+
+# Specify Accounts For our social account provider
+SOCIALACCOUNT_PROVIDER = {
+    "google" : {
+        "SCOPE" : ["profile","email"],
+        "AUTH_PARAMS" : {"access_type": "offline"}
+    }
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,3 +152,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# Adding Authentication Backend Configuration
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
+
+
+# Define our Redirect Urls
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
+# Some Variables For 
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"
+ACCOUNT_LOGOUT_ON_GET = True
+SOCIALACCOUNT_LOGIN_ON_GET = True

@@ -22,7 +22,7 @@ body{
 
 .register-card{
     width: 450px;
-    height: max-content;
+    height: 650px;
     /* border: 1px solid #C0C0C0; */
     border-radius: 10px;
     background-color: white;
@@ -72,7 +72,7 @@ svg#cancelIcon:hover {
     align-items: center;
     /* Position */
     position: relative;
-    /* top: 5px; */
+    top: -41px;
 }
 
 /*---*/
@@ -171,12 +171,12 @@ form label .input-box:hover{
 
 
 #btn-submit{
-    padding: 1.2em;
+    padding: 1em;
     font-size: 17px;
     border-radius: var(--btn-brd-rd);
-    border: none;
-    color: white;
-    background: #909090;
+    border: 1px solid #333333;
+    color: #333333;
+    background: #ffffff;
     cursor: pointer;
     border-radius: 50px;
 }
@@ -187,6 +187,19 @@ input#btn-submit.btn_disabled{
     background: #fd2678;
 }
 
+
+a#google-btn {
+    border: 1px solid black;
+    width: 100%;
+    height: 57px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background: #333333;
+    color: white;
+}
 
 
 

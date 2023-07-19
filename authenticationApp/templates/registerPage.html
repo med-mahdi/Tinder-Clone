@@ -5,8 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tinder | Dating, Make Friends & Meet New People</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'allauth/account/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'allauth/socialaccount/style.css' %}">
     </head>
     <body>
+        {% load socialaccount %}
+
+        <a id="google-btn" href="{% provider_login_url 'google' %}">Login with Google</a>
+        <a href="/logout">Logout</a>
+        <hr>
         <h1>Register Page</h1>
         <hr>
 
@@ -31,5 +39,30 @@
         </form>
 
 
+        <script>
+            var providerLoginUrl = "{% provider_login_url 'google' %}";
+            console.log(providerLoginUrl);
+            console.log(providerLoginUrl);
+            console.log(providerLoginUrl);
+        </script>
+
+
     </body>
 </html>
+
+
+
+<style>
+    a#google-btn {
+        border: 1px solid black;
+        width: 100%;
+        height: 57px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        background: #333333;
+        color: white;
+    }
+</style>

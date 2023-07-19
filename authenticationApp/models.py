@@ -35,13 +35,11 @@ class UserProfile(models.Model):
         return self.fname + " " + self.lname
 
     def __str__(self):
-        return self.fullName()
+        return str(self.user)
 
 
-
-
-# def create_user_profile(sender,instance,created,**kwargs):
-#     if created:
-#         UserProfile.objects.create(user=instance)
-#         print("profile created successfully")
-# post_save.connect(create_user_profile,sender=User)
+def create_user_profile(sender,instance,created,**kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+        print("profile created successfully")
+post_save.connect(create_user_profile,sender=User)

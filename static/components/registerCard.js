@@ -40,7 +40,8 @@ app.component('register-card',{
                             </label>
 
                             <input type="submit" :disabled="btn_disabled" @click="submitForm" :value="btn_value" id="btn-submit" :class="{ btn_disabled: !btn_disabled }">
-                            <p class="registerNotify">Already Have an account? <span id="register-link"><a href="/register">Login</a></span></p>
+                            <a id="google-btn" :href="gooleLinkAuth"><img src="/static/media/icons/google-icon.png" alt=""> Login with Google</a>
+                            <p class="registerNotify">Already Have an account?<span id="register-link"><a href="/register">Login</a></span></p>
                         </form>
 
                     </div>
@@ -59,6 +60,7 @@ app.component('register-card',{
             btn_disabled : true ,
             btn_value : "Continue",
             message : "",
+            gooleLinkAuth : "/accounts/google/login/"
         }
     },
     methods : {
@@ -68,12 +70,14 @@ app.component('register-card',{
             if (password_length >= 8){
                 this.btn_disabled = false
                 this.btn_value = "Are you Ready !"
+                buttonSubmit.style.color = "white";
                 buttonSubmit.style.background = "linear-gradient(45deg,#ff287a,#ff6036)";
             }
             else{
                 this.btn_disabled = true
                 this.btn_value = "Continue"
-                buttonSubmit.style.background = "#909090";
+                buttonSubmit.style.background = "white";
+                buttonSubmit.style.color = "#333333";
             }
         }
         ,

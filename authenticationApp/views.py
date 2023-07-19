@@ -14,7 +14,6 @@ from .decorators import *
 
 @userAuthenticated
 def registerPage(request):
-    registerForm = CreateUserForm()
     if request.method == 'POST':
         username = request.POST.get('username')
         userEmail = request.POST.get('useremail')
@@ -36,8 +35,7 @@ def registerPage(request):
                 return HttpResponse("User created unsuccessfully")    
         else:
             return HttpResponse("User Not Created Successfully Form Input Not Valid")    
-    context = {"form": registerForm}
-    return render(request,'registerPage.html',context)
+    return render(request,'homePage.html')
 
 
 

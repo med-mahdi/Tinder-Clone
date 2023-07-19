@@ -63,4 +63,5 @@ def logoutPage(request):
 
 @login_required(login_url='loginPage')
 def homePage(request):
-    return HttpResponse("Home page lmao")    
+    user = request.user
+    return HttpResponse('<h1 style="font-family:sans-serif">Hello, you are logged As {}</h1> <a href="/logout">Logout Now</a> <hr>'.format(user.username))    

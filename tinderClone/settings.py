@@ -27,10 +27,7 @@ SECRET_KEY = 'django-insecure-5%*o2dltaelsu&b^-$#i19g2!$ub3-hnr6run(xhy12p@4^a66
 DEBUG = True
 # APPEND_SLASH = False
 
-ALLOWED_HOSTS = ["web-production-0de4.up.railway.app","*"]
-CSRF_TRUSTED_ORIGINS = ['https://web-production-0de4.up.railway.app']
-
-
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -57,7 +54,7 @@ INSTALLED_APPS = [
 SOCIALACCOUNT_PROVIDER = {
     "google" : {
         "SCOPE" : ["profile","email"],
-        "AUTH_PARAMS" : {"access_type": "online"}
+        "AUTH_PARAMS" : {"access_type": "offline"}
     }
 }
 
